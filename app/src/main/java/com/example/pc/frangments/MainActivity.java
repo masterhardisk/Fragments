@@ -6,12 +6,14 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 
-public class MainActivity extends Activity implements Communicator {
+public class MainActivity extends Activity implements FragmentA.Communicator {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FragmentA f1 = (FragmentA) getFragmentManager().findFragmentById(R.id.fragment1);
+        f1.setCommunicator(this);
     }
 
     @Override
@@ -20,4 +22,6 @@ public class MainActivity extends Activity implements Communicator {
         FragmentB f2 = (FragmentB) manager.findFragmentById(R.id.fragment2);
         f2.changetext(data);
     }
+
+
 }

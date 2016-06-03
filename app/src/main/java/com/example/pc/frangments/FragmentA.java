@@ -63,5 +63,12 @@ public class FragmentA extends Fragment implements View.OnClickListener {
         }
     }
 
+public interface Communicator{
+    public void respond(String data);
+}
+
+    public void setCommunicator (Communicator c){
+        comm=c;
+    }
 
 }
