@@ -24,4 +24,8 @@ public class FragmentB extends Fragment {
         super.onActivityCreated(savedInstanceState);
         text= (TextView) getActivity().findViewById(R.id.textView);
     }
+
+    public void changetext (String data){
+        text.setText(data);
+    }
 }
