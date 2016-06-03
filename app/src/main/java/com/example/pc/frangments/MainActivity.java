@@ -3,10 +3,8 @@ package com.example.pc.frangments;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.TextView;
