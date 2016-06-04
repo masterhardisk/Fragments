@@ -6,6 +6,7 @@ import android.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.telecom.Call;
 import android.view.View;
 import android.widget.TextView;
 
@@ -71,6 +72,7 @@ public class MainActivity extends Activity implements FragmentA.Communicator {
         f3 = new FragmentHuevos();
         FragmentTransaction transaction= manager.beginTransaction();
         transaction.add(R.id.group,f3,"Huevos");
+        transaction.addToBackStack("addF");
         transaction.commit();
     }
 
@@ -78,7 +80,8 @@ public class MainActivity extends Activity implements FragmentA.Communicator {
         FragmentHuevos f3 = (FragmentHuevos) manager.findFragmentByTag("Huevos");
         FragmentTransaction transaction = manager.beginTransaction();
         if(f3!=null){
-            transaction.remove(f3);
+           transaction.remove(f3);
+            transaction.addToBackStack("remF");
             transaction.commit();
         }
     }
